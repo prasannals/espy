@@ -33,5 +33,5 @@ class Espy():
         classes = os.listdir(imageLocation)
         imgs = [os.listdir( imageLocation + c ) for c in classes]
         imgs = [len(im) for im in imgs]
-        valSize = [im * self.validationSize for im in imgs]
+        valSize = [round(im * self.validationSize) for im in imgs]
         return valSize
