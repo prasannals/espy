@@ -12,7 +12,7 @@ class Espy():
     def fit(self, imageLocation, numEpoch = 1):
         #create validation set
         if os.path.exists(imageLocation + '../valid/') == False:
-            valSize = min(self._getValidationSizes(imageLocation))
+            valSize = int(min(self._getValidationSizes(imageLocation)))
             create_valid(imageLocation, valSize)
 
         batches = self.model.get_batches(imageLocation, batch_size = self.batchSize)
